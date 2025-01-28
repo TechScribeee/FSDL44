@@ -2,11 +2,109 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Team Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background: #35424a;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #1abc9c;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .delete {
+            background: #e74c3c;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .delete:hover {
+            background: #c0392b;
+        }
+    </style>
 </head>
 <body>
-    <p>First program</p>
-    <h1> This is second line </h1>
+
+<header>
+    <h1>IPL Team Management System</h1>
+</header>
+
+<div class="container">
+    <input type="text" id="playerInput" placeholder="Add a new player...">
+    <button onclick="addPlayer()">Add Player</button>
+    <h2>Team Roster</h2>
+    <ul id="teamRoster"></ul>
+</div>
+
+<script>
+    function addPlayer() {
+        const playerInput = document.getElementById('playerInput');
+        const playerValue = playerInput.value.trim();
+        if (playerValue === '') {
+            alert('Please enter a player name.');
+            return;
+        }
+
+        const teamRoster = document.getElementById('teamRoster');
+        const li = document.createElement('li');
+        li.textContent = playerValue;
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Remove';
+        deleteButton.className = 'delete';
+        deleteButton.onclick = function() {
+            teamRoster.removeChild(li);
+        };
+
+        li.appendChild(deleteButton);
+        teamRoster.appendChild(li);
+        playerInput.value = ''; // Clear the input field
+    }
+</script>
+
 </body>
 </html>
