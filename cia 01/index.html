@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Layout with Shadow Effect</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      width: 250px;
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2), 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 2px solid #ddd;
+    }
+
+    .card-content {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .card-content h3 {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .card-content p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-container">
+    <div class="card">
+      <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTTL_UExAe50ACEDlFgILnCMeB-LeqJdIScxR5dz2c7YpftXl4a5wlVoz_lq8-7Klx-DOiuFa1c8aHqfO6kFp3HN9t7W0JMbym1UMi8BfgB2A" alt="Card Image">
+      <div class="card-content">
+        <h3>Card Title</h3>
+        <p>Cody Rhodes, born Cody Garrett Runnels, is an American professional wrestler, promoter, and actor. He is best known for his time in WWE, where he performed under the ring name "Cody Rhodes." Cody is the son of the legendary professional wrestler Dusty Rhodes, a Hall of Famer known as "The American Dream." Throughout his career, Cody has been involved in numerous high-profile storylines and has won several championships in WWE, including the Intercontinental Championship.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://i.pinimg.com/236x/2d/e3/ab/2de3ab03b3676dfec4c328b8dff78eb2.jpg" alt="Card Image">
+      <div class="card-content">
+        <h3>Roman Reigns</h3>
+        <p>Roman Reigns, whose real name is Leati Joseph Anoa'i, is a professional wrestler, actor, and former American football player. He is widely recognized for his time in WWE, where he has become one of the biggest stars in the promotion. Reigns is a multi-time WWE Universal Champion and has headlined several major WWE events, including WrestleMania.Roman Reigns first gained widespread attention as a member of the faction The Shield, alongside Seth Rollins and Dean Ambrose. </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQk1ZVdt67zN_rMIFomhGeevpbBAZqzRoCP3CJ0XQsCXqSDgFc7CPt-maN37iMhF__7irLP01CvzaekGCyHo33nuBFElXrGMX8_X97PMvPd3w" alt="Card Image">
+      <div class="card-content">
+        <h3>Card Title</h3>
+        <p>John Cena is an American professional wrestler, actor, and television host, best known for his iconic career in WWE. Cena is widely regarded as one of the greatest and most popular WWE Superstars of all time. Known for his catchphrase "Never Give Up," Cena's persona as an unstoppable force both in and out of the ring has made him a cultural icon. He has held numerous championships in WWE, including the WWE Championship and the United States Championship, and has headlined numerous major events, including multiple editions of WrestleMania.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

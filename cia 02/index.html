@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Division by Zero</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f4f4f9;
+    }
+    #inputModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      text-align: center;
+      width: 300px;
+      border-radius: 10px;
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 45%;
+      padding: 10px;
+      margin: 5px;
+      border: none;
+      background: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button.cancel {
+      background: #dc3545;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="openModal()">Divide Numbers</button>
+
+  <!-- Modal for input -->
+  <div id="inputModal">
+    <div class="modal-content">
+      <h3>Enter the numbers for division</h3>
+      <input id="num1" placeholder="First number" type="number">
+      <input id="num2" placeholder="Second number" type="number">
+      <button onclick="divideNumbers()">Calculate</button>
+      <button class="cancel" onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal() { document.getElementById('inputModal').style.display = 'flex'; }
+    function closeModal() { document.getElementById('inputModal').style.display = 'none'; }
+
+    function divideNumbers() {
+      const num1 = parseFloat(document.getElementById("num1").value), num2 = parseFloat(document.getElementById("num2").value);
+      if (isNaN(num1) || isNaN(num2)) return alert("Invalid numbers!");
+      num2 === 0 ? alert("Division by zero!") : alert(`Result: ${num1 / num2}`);
+      closeModal();
+    }
+  </script>
+</body>
+</html>
